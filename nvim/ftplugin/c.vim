@@ -21,7 +21,7 @@ hi link @boolean.c @constant.c
 hi @constant.c ctermfg=LightBlue guifg=#00b1f7 gui=bold
 
 hi link @constant.builtin.c @variable.builtin.c
-hi @variable.builtin.c ctermfg=Red guifg=#fc07bf 
+hi @variable.builtin.c ctermfg=Red guifg=#fc07bf
 
 hi @function.macro.c ctermfg=Yellow guifg=#fc9207i
 hi link @function.call.c @function.c
