@@ -2,8 +2,6 @@ setlocal softtabstop=4
 let b:undo_ftplugin = "setl softtabstop<"
 setlocal expandtab
 
-
-
 hi link @keyword.conditional.java @keyword.java
 hi link @keyword.repeat.java @keyword.java
 hi link @keyword.return.java @keyword.java

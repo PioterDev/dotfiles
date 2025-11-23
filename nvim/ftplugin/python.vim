@@ -12,6 +12,7 @@ hi link @keyword.exception.python @keyword.python
 hi @keyword.python ctermfg=Yellow guifg=Yellow gui=bold
 
 hi @type.python ctermfg=Green guifg=#43ed3d
+hi @type.builtin.python ctermfg=Blue guifg=#84c1ff
 
 " hi @module.python ctermfg=Green guifg=#73f527
 hi link @module.python @variable.python

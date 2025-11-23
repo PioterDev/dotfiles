@@ -1,6 +1,8 @@
 require("config.lazy")
 require("config.gitsigns")
 
+require("config.tree-sitter")
+
 require("config.options")
 require("config.keybinds")
 
