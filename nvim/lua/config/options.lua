@@ -19,7 +19,7 @@ vim.cmd("filetype plugin indent on")
 local OS = getOS.get()
 if OS == getOS.WINDOWS then
 	vim.cmd("set shell=cmd")
-elseif OS == getOS.GNU_LINUX then
+elseif OS == getOS.LINUX then
 	if utils.isFileInPath("zsh") then
 		vim.cmd("set shell=zsh")
 	elseif utils.isFileInPath("bash") then

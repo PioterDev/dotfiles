@@ -2,7 +2,7 @@
 local getOS = {
 	UNKNOWN   = 0,
 	WINDOWS   = 1,
-	GNU_LINUX = 2,
+	LINUX = 2,
 	-- TODO: others
 }
 
@@ -14,7 +14,7 @@ function getOS.getName()
 	end
 
 	-- Unix, Linux variants
-	local fh, err = assert(io.popen("uname -o 2>/dev/null", "r"))
+	local fh, err = assert(io.popen("uname 2>/dev/null", "r"))
 	if fh then
 		osname = fh:read()
 	end
@@ -26,8 +26,8 @@ function getOS.get()
 	local osname = getOS.getName()
 	if osname == "Windows" then
 		return getOS.WINDOWS
-	elseif osname == "GNU/Linux" then
-		return getOS.GNU_LINUX
+	elseif osname == "Linux" then
+		return getOS.LINUX
 	else
 		return getOS.UNKNOWN
 	end
