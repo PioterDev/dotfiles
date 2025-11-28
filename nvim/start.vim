@@ -28,8 +28,8 @@ set fencs=utf-8,latin1,ucs-bom,default
 
 augroup remember_folds
 	autocmd!
-	autocmd BufWinLeave *.* mkview
-	autocmd BufWinEnter *.* silent! loadview
+	autocmd BufWinLeave ?* mkview
+	autocmd BufWinEnter ?* silent! loadview
 augroup END
 
 command! GPL3 call append(0, [
