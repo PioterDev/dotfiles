@@ -27,5 +27,8 @@ path_ulr
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+if [[ "$(uname)" == "Linux" ]]; then
+	alias open='xdg-open'
+fi
 alias mvn='ln -sf /tmp/m2 $HOME/.m2; mkdir -p /tmp/m2; mvn'
 
