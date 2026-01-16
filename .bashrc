@@ -42,7 +42,6 @@ main() {
 	if [[ "$(uname)" == "Linux" ]]; then
 		alias open='xdg-open'
 	fi
-	alias mvn='ln -sf /tmp/m2 $HOME/.m2; mkdir -p /tmp/m2; mvn'
 
 	local filepath=
 	set_xdg_env_if_not_set
