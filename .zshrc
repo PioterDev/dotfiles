@@ -65,6 +65,7 @@ set_xdg_env_if_not_set() {
 main() {
 	alias ls='ls --color'
 	alias grep='grep --color=auto'
+	alias py=python
 	if [[ "$(uname)" == "Linux" ]]; then
 		alias open='xdg-open'
 	fi
