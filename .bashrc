@@ -36,6 +36,11 @@ set_xdg_env_if_not_set() {
 	return $?
 }
 
+set_homes_if_not_set() {
+	source_by_session homes.sh
+	return $?
+}
+
 main() {
 	alias ls='ls --color'
 	alias grep='grep --color=auto'
@@ -50,6 +55,11 @@ main() {
 		echo "$filepath does not exist!"
 	else
 		export RLWRAP_HOME=$XDG_STATE_HOME/rlwrap
+	fi
+	# path_ulr depends on environment variables set in homes.sh, so it must be run first
+	set_homes_if_not_set
+	if ! [ $? -eq 0 ]; then
+		echo "$filepath does not exist!"
 	fi
 	path_ulr
 	if ! [ $? -eq 0 ]; then
