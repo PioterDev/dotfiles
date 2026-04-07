@@ -31,6 +31,25 @@ setopt PROMPT_SUBST
 # PROMPT='%F{green}%n%F{28}@%F{green}%m:%F{cyan}%d:~🐟%F{white}%(!.#.$) '
 PROMPT='%F{green}%n%F{28}@%F{green}%m:%F{cyan}%d:~🔷%F{white}%(!.#.$) '
 
+terminate-bg() {
+	if [ -z "$(jobs)" ]; then
+		printf "\nNo job to terminate\n"
+		zle reset-prompt
+		return 0
+	fi
+	local job=$(jobs -p %+)
+	# WTF?!
+	local state="${(@j: :)${(@s: :)job}[5]}"
+	local pid="${(@j: :)${(@s: :)job}[4]}"
+	local cmd="${(@j: :)${(@s: :)job}[@]:8}"
+	if [ "$state" = "suspended" ]; then printf "\n"; fi
+	kill $pid;
+	if [ "$state" = "suspended" ]; then fg; fi
+	return 0
+}
+zle -N terminate-bg terminate-bg
+bindkey "^T" terminate-bg
+
 # TODO: XDG_SESSION_DESKTOP may not be defined, while XDG_CURRENT_DESKTOP is a colon-separated list; see
 # https://superuser.com/questions/1074068
 # https://unix.stackexchange.com/questions/116539
@@ -68,12 +87,14 @@ set_homes_if_not_set() {
 }
 
 main() {
+	alias claer=clear
 	alias ls='ls --color'
 	alias grep='grep --color=auto'
 	alias py=python
 	if [[ "$(uname)" == "Linux" ]]; then
 		alias open='xdg-open'
 	fi
+	alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 
 	local filepath=
 	set_xdg_env_if_not_set
