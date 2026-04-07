@@ -56,12 +56,14 @@ set_xdg_env_if_not_set() {
 }
 
 main() {
+	alias claer=clear
 	alias ls='ls --color'
 	alias grep='grep --color=auto'
+	alias py=python
 	if [[ "$(uname)" == "Linux" ]]; then
 		alias open='xdg-open'
 	fi
-	alias mvn='ln -sf /tmp/m2 $HOME/.m2; mkdir -p /tmp/m2; mvn'
+	alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 
 	local filepath=
 	set_xdg_env_if_not_set
