@@ -8,6 +8,25 @@
 # PS1='[\u@\h \W]\$'
 PS1='\e[32m\u\e[38;5;28m@\e[32m\h:\e[36m$PWD:~\e[37m\$ '
 
+# https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+set -b
+
+terminate-bg() {
+	if [ -z "$(jobs)" ]; then
+		echo "No job to terminate"
+		return 0
+	fi
+	local pid=$(jobs -p %+)
+	local job=($(jobs %+))
+	local state=${job[1]}
+	# local cmd=${job[@]:2}
+	if [ "$state" = "Stopped" ]; then printf "Resuming "; fi
+	kill $pid
+	fg
+	return 0
+}
+bind -x '"\C-t": terminate-bg'
+
 # TODO: see .zshrc
 source_by_session() {
 	filepath=$HOME/Software/1/dotfiles/$1 # default for no session
