@@ -43,7 +43,9 @@ source_by_session() {
 }
 
 path_ulr() {
-	if [[ -n "${PATH_ULR}" ]]; then
+	if [[ -n "${PATH_ULR}" ]] && \
+		[[ -n "${PKG_CONFIG_PATH_ULR}" ]] && \
+		[[ -n "${PYTHONPATH_ULR}" ]]; then
 		return 0
 	fi
 	source_by_session path.sh
@@ -74,8 +76,6 @@ main() {
 	set_xdg_env_if_not_set
 	if ! [ $? -eq 0 ]; then
 		echo "$filepath does not exist!"
-	else
-		export RLWRAP_HOME=$XDG_STATE_HOME/rlwrap
 	fi
 	# path_ulr depends on environment variables set in homes.sh, so it must be run first
 	set_homes_if_not_set
