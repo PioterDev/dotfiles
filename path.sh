@@ -25,3 +25,8 @@ if [[ -z "${PKG_CONFIG_PATH_ULR}" ]]; then
 	export PKG_CONFIG_PATH_ULR=1
 fi
 
+if [[ -z "${PYTHONPATH_ULR}" ]]; then
+	export PYTHONPATH=$HOME/ulr/lib/python3/site-packages:$PYTHONPATH
+	export PYTHONPATH_ULR=1
+fi
+
