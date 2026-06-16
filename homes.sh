@@ -48,3 +48,6 @@ if [[ -z "${SQLITE_HISTORY}" ]]; then
 	export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite_history
 fi
 
+if [[ -z "${WGETRC}" ]]; then
+	export WGETRC=$XDG_CONFIG_HOME/wgetrc
+fi
