@@ -16,7 +16,6 @@ hi @label.cpp ctermfg=Magenta guifg=#ed3da4
 hi @keyword.cpp ctermfg=Yellow guifg=Yellow gui=bold
 hi @keyword.modifier.cpp ctermfg=Blue guifg=#84a3ff
 
-
 hi link @constant.macro.cpp @constant.cpp
 hi link @boolean.cpp @constant.cpp
 hi @constant.cpp ctermfg=LightBlue guifg=#00b1f7 gui=bold
@@ -24,7 +23,7 @@ hi @constant.cpp ctermfg=LightBlue guifg=#00b1f7 gui=bold
 hi link @constant.builtin.cpp @variable.builtin.cpp
 hi @variable.builtin.cpp ctermfg=Red guifg=#fc07bf 
 
-hi @function.macro.cpp ctermfg=Yellow guifg=#fc9207i
+hi @function.macro.cpp ctermfg=Yellow guifg=#cfed3d cterm=bold gui=bold
 hi link @function.call.cpp @function.cpp
 hi link @constructor.cpp @function.call.cpp
 hi @function.cpp ctermfg=Yellow guifg=#cfed3d
