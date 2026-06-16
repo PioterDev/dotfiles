@@ -39,6 +39,10 @@ if [[ -z "${NUGET_HTTP_CACHE_PATH}" ]]; then
 	export NUGET_HTTP_CACHE_PATH=/tmp/nuget_${USER}_http_cache
 fi
 
+if [[ -z "${SQLITE_HISTORY}" ]]; then
+	export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite_history
+fi
+
 # https://github.com/dotnet/aspnetcore/issues/43278
 # Bruh...
 # https://github.com/dotnet/sdk/issues/8678
