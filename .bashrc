@@ -2,6 +2,10 @@
 # ~/.bashrc
 #
 
+HISTSIZE=1000000
+HISTFILESIZE=100000000
+HISTCONTROL=ignoredups
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
