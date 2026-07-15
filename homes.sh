@@ -30,22 +30,22 @@ fi
 # https://github.com/dotnet/sdk/issues/8678
 # Another one.
 
-if [[ -z "${XDG_STATE_HOME}" ]]; then return; fi
+if [[ -n "${XDG_STATE_HOME}" ]]; then
+	if [[ -z "${LESSHISTFILE}" ]]; then
+		export LESSHISTFILE=$XDG_STATE_HOME/lesshst
+	fi
 
-if [[ -z "${LESSHISTFILE}" ]]; then
-	export LESSHISTFILE=$XDG_STATE_HOME/lesshst
-fi
+	if [[ -z "${PYTHON_HISTORY}" ]]; then
+		export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
+	fi
 
-if [[ -z "${PYTHON_HISTORY}" ]]; then
-	export PYTHON_HISTORY=$XDG_STATE_HOME/python_history
-fi
+	if [[ -z "${RLWRAP_HOME}" ]]; then
+		export RLWRAP_HOME=$XDG_STATE_HOME/rlwrap
+	fi
 
-if [[ -z "${RLWRAP_HOME}" ]]; then
-	export RLWRAP_HOME=$XDG_STATE_HOME/rlwrap
-fi
-
-if [[ -z "${SQLITE_HISTORY}" ]]; then
-	export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite_history
+	if [[ -z "${SQLITE_HISTORY}" ]]; then
+		export SQLITE_HISTORY=$XDG_STATE_HOME/sqlite_history
+	fi
 fi
 
 if [[ -z "${WGETRC}" ]]; then
