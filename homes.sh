@@ -58,6 +58,11 @@ if [[ -n "${XDG_DATA_HOME}" ]]; then
 		# https://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration.html
 		export GNUPGHOME=$XDG_DATA_HOME/gnupg
 	fi
+
+	if [[ -z "${IPYTHONDIR}" ]]; then
+		# https://scipy-ipython.readthedocs.io/en/stable/config/intro.html
+		export IPYTHONDIR=$XDG_DATA_HOME/ipython
+	fi
 fi
 
 if [[ -z "${WGETRC}" ]]; then
