@@ -48,6 +48,13 @@ if [[ -n "${XDG_STATE_HOME}" ]]; then
 	fi
 fi
 
+if [[ -n "${XDG_DATA_HOME}" ]]; then
+	if [[ -z "${WINEPREFIX}" ]]; then
+		# Also see https://gitlab.winehq.org/wine/wine/-/wikis/FAQ.
+		export WINEPREFIX=$XDG_DATA_HOME/wine
+	fi
+fi
+
 if [[ -z "${WGETRC}" ]]; then
 	export WGETRC=$XDG_CONFIG_HOME/wgetrc
 fi
