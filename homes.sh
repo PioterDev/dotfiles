@@ -53,6 +53,11 @@ if [[ -n "${XDG_DATA_HOME}" ]]; then
 		# Also see https://gitlab.winehq.org/wine/wine/-/wikis/FAQ.
 		export WINEPREFIX=$XDG_DATA_HOME/wine
 	fi
+
+	if [[ -z "${GNUPGHOME}" ]]; then
+		# https://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration.html
+		export GNUPGHOME=$XDG_DATA_HOME/gnupg
+	fi
 fi
 
 if [[ -z "${WGETRC}" ]]; then
