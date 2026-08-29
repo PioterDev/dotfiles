@@ -8,6 +8,14 @@ if [[ -z "${RUSTUP_HOME}" ]]; then
 	export RUSTUP_HOME=$HOME/ulr/lib/rustup
 fi
 
+# This one is particularly egregious.
+# Not only does Go create an UNDOTTED directory in $HOME BY DEFAULT,
+# the files stored there are read-only, so good luck removing them sanely
+# without `sudo rm -rf`.
+if [[ -z "${GOPATH}" ]]; then
+	export GOPATH=$HOME/ulr/lib/go
+fi
+
 if [[ -z "${GRADLE_USER_HOME}" ]]; then
 	export GRADLE_USER_HOME=$HOME/Software/3/Java/Gradle
 fi
