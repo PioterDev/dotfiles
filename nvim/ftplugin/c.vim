@@ -15,7 +15,10 @@ hi @label.c ctermfg=Magenta guifg=#ed3da4
 hi @keyword.c ctermfg=Yellow guifg=Yellow gui=bold
 hi @keyword.modifier.c ctermfg=Blue guifg=#84a3ff
 
+hi link cRepeat @keyword.c
 hi link cTypedef @keyword.c
+hi link cStatement @keyword.c
+hi link cConditional @keyword.c
 hi link cStorageClass @keyword.modifier.c
 hi link cInclude @keyword.import.c
 hi link cDefine @keyword.directive.define.c
