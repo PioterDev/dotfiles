@@ -71,6 +71,8 @@ main() {
 	alias ls='ls --color'
 	alias grep='grep --color=auto'
 	alias py=python
+	# "Text  grep"
+	alias tg="grep -I"
 	if [[ "$(uname)" == "Linux" ]]; then
 		alias open='xdg-open'
 	fi
