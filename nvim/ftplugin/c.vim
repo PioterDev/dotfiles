@@ -49,5 +49,5 @@ hi link cCharacter String
 ""ino /* /**/<left><left>  <left>
 ino /**<CR> <Esc>:lua require('neogen').generate()<CR>
 " convert "//"-style comment to "/* */"
-map <F2> :s/\/\//\/* <CR>gv:s/$/ *\/<CR>/\/\/<CR>
-map <F3> :s/ \*\/$//<CR>gv:s/\/\* /\/\//<CR>/\/\* .* \*\/<CR>
+" map <F2> :s/\/\//\/* <CR>gv:s/$/ *\/<CR>/\/\/<CR>
+" map <F3> :s/ \*\/$//<CR>gv:s/\/\* /\/\//<CR>/\/\* .* \*\/<CR>

@@ -52,8 +52,8 @@ vim.api.nvim_set_keymap('v', "'", "<Esc>mt`>a'<Esc>gv<Esc>`<i'<Esc>`tl", opts_s_
 vim.api.nvim_set_keymap('i', "<C-Down>", "<Esc>:t.<CR>gi<Down>", {})
 
 -- GitSigns convenience keybinds
-vim.api.nvim_set_keymap('n', "<F1>", ":Gits stage_hunk<CR>", {})
-vim.api.nvim_set_keymap('v', "<F1>", ":Gits stage_hunk<CR>", {})
+vim.api.nvim_set_keymap('n', "<F2>", ":Gits stage_hunk<CR>", {})
+vim.api.nvim_set_keymap('v', "<F2>", ":Gits stage_hunk<CR>", {})
 
 vim.keymap.set('n', '<F5>', function()
 	Gits.nav_hunk('next', {}, function()
