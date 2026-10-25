@@ -73,6 +73,8 @@ if [[ -n "${XDG_DATA_HOME}" ]]; then
 	fi
 fi
 
-if [[ -z "${WGETRC}" ]]; then
-	export WGETRC=$XDG_CONFIG_HOME/wgetrc
+if [[ -n "${XDG_CONFIG_HOME}" ]]; then
+	if [[ -z "${WGETRC}" ]]; then
+		export WGETRC=$XDG_CONFIG_HOME/wgetrc
+	fi
 fi
