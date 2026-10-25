@@ -1,0 +1,27 @@
+[core]
+	editor = ~/.config/git/editor
+[init]
+	defaultBranch = main
+[include]
+	path = config-default-creds
+[alias]
+	st = status
+	c = commit
+	ca = commit --amend
+	can = commit --amend --no-edit
+	r = rebase
+	ri = rebase -i
+	ch = checkout
+	cb = checkout -b
+	dH = diff HEAD~1 HEAD
+	d = diff
+	ds = diff --staged
+	sh = stash
+	shp = stash pop
+	shs = stash show
+	logn = log -n
+	l1 = log -n 1
+[rerere]
+	enabled = true
+[rebase]
+	autoStash = false
