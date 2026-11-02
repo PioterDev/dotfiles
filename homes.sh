@@ -71,6 +71,10 @@ if [[ -n "${XDG_DATA_HOME}" ]]; then
 		# https://scipy-ipython.readthedocs.io/en/stable/config/intro.html
 		export IPYTHONDIR=$XDG_DATA_HOME/ipython
 	fi
+
+	if [[ -z "${QEMU_HOME}" ]]; then
+		export QEMU_HOME=$XDG_DATA_HOME/qemu
+	fi
 fi
 
 if [[ -n "${XDG_CONFIG_HOME}" ]]; then
